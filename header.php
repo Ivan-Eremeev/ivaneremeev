@@ -1,13 +1,4 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package ivaneremeev
- */
 
 ?>
 <!DOCTYPE html>
@@ -24,12 +15,13 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+		<script>
+			var $ = jQuery.noConflict();
+		</script>
 		<div class="page">
-			<!-- header-->
 			<?php if ( is_page_template('home-template.php') ) : ?>
 				<header class="header">
 					<div class="wrapper">
-						<!-- menu-->
 						<div class="menu menu--left js-menu">
 							<div class="menu_btn" id="menu-btn">
 								<div class="menu_btn-inner"></div>
@@ -50,16 +42,12 @@
 							</nav>
 							<div class="menu_over" id="menu-over"></div>
 						</div>
-						<!-- /menu-->
 					</div>
 				</header>
 				<div class="content">
-				<!-- /header-->
 			<?php else : ?>
-				<!-- header-->
 				<header class="header" id="header">
 					<div class="wrapper">
-						<!-- menu-->
 						<div class="menu menu--left js-menu">
 							<div class="menu_btn" id="menu-btn">
 								<div class="menu_btn-inner menu_btn-inner--dark"></div>
@@ -80,10 +68,8 @@
 							</nav>
 							<div class="menu_over" id="menu-over"></div>
 						</div>
-						<!-- /menu-->
 					</div>
 				</header>
-				<!-- /header-->
 				<div class="content">
 			<?php endif; ?>
 			

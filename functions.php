@@ -141,11 +141,17 @@ add_action( 'widgets_init', 'ivaneremeev_widgets_init' );
  */
 function ivaneremeev_scripts() {
 	wp_enqueue_style( 'ivaneremeev-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'ivaneremeev-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'aos', get_template_directory_uri() . '/assets/css/libs/aos.css', array(), _S_VERSION );
+	wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/libs/slick.css', array(), _S_VERSION );
+
 	wp_enqueue_style( 'ivaneremeev-main', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION );
 
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/b7bf307800.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'aos', get_template_directory_uri() . '/assets/js/libs/aos.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jquery.lazy', get_template_directory_uri() . '/assets/js/libs/jquery.lazy.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/libs/slick.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ivaneremeev-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ivaneremeev-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
