@@ -161,6 +161,14 @@ function ivaneremeev_scripts() {
 add_action( 'wp_enqueue_scripts', 'ivaneremeev_scripts' );
 
 /**
+ * Enqueue scripts and styles for admin page.
+ */
+function ivaneremeev_scripts_admin() {
+	wp_enqueue_style( 'admin-style', get_template_directory_uri() . '/blocks/all.css', array(), _S_VERSION );
+}
+add_action( 'admin_enqueue_scripts', 'ivaneremeev_scripts_admin' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -186,3 +194,21 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Запрет обновления плагинов
+ */
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
+function filter_plugin_updates( $value ) {
+	unset( $value->response['advanced-custom-fields-pro-master/acf.php'] );
+	return $value;
+}
+
+/**
+ * Удалить пункты меню в админке
+ */
+function remove_admin_menu_items() {
+	remove_menu_page('edit-comments.php');
+	remove_menu_page('edit.php');
+}
+add_action( 'admin_menu', 'remove_admin_menu_items' );

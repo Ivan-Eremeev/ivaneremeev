@@ -10,7 +10,7 @@
 </div>
 			<footer class="footer"> 
 				<div class="wrapper">
-					<p>&copy; Ivan Eremeev 2020</p>
+					<p>&copy; Ivan Eremeev 2021</p>
 				</div>
 			</footer>
 		</div>

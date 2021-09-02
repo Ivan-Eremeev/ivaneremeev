@@ -1,3 +1,124 @@
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
 html,
 body,
 div,
@@ -166,8 +287,8 @@ h3 {
   font-family: "Pe-icon-7-stroke";
   font-weight: normal;
   font-style: normal;
-  src: url("../fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.eot");
-  src: url("../fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.eot?#iefix") format("embedded-opentype"), url("../fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.woff") format("woff"), url("../fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.woff2") format("woff2"), url("../fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.ttf") format("truetype"), url("../fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.svg") format("svg");
+  src: url("../assets/fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.eot");
+  src: url("../assets/fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.woff") format("woff"), url("../assets/fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.woff2") format("woff2"), url("../assets/fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.ttf") format("truetype"), url("../assets/fonts/Pe-icon-7-stroke/Pe-icon-7-stroke.svg") format("svg");
 }
 
 html {
@@ -550,6 +671,7 @@ h2 {
 
 .welcome {
   height: 100vh;
+  background-image: url(../img/welcome-bg.jpg);
   background-size: cover;
   position: relative;
 }
@@ -598,6 +720,7 @@ h2 {
   font-size: 50px;
   text-transform: uppercase;
   margin-top: 25px;
+  color: #fff;
 }
 
 .welcome_title span {
@@ -1484,4 +1607,42 @@ h2 {
   .catalog_col {
     width: 100%;
   }
+}
+
+.acfe-modal-overlay {
+  background: transparent !important;
+}
+.acfe-modal.-open {
+  align-items: flex-end !important;
+}
+.acfe-modal.-open.-full>.acfe-modal-wrapper {
+  max-width: 60% !important;
+  margin-right: 20px !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+.acfe-modal.-open .acfe-modal-title {
+  background: rgba(0,0,0,.9) !important;
+  border-bottom: 1px solid #000 !important;
+}
+.acfe-modal.-open .acfe-modal-content {
+  background: rgba(0,0,0,.9) !important;
+}
+.acfe-modal.-open .acfe-modal-title>span.title {
+  color: #fff !important;
+}
+.acfe-modal.-open .acfe-modal-content .acfe-flex-container ul li a {
+  background: #242424 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+}
+.acfe-modal.-open .acfe-modal-content .acfe-flex-container ul li a:hover {
+  background: #444444 !important;
+}
+.acfe-flexible-layout-thumbnail {
+  border-radius: 10px !important;
+}
+.acfe-modal.-open .acfe-modal-title>button.close {
+  color: #fff !important;
 }

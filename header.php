@@ -5,7 +5,6 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta <?php bloginfo( 'charset' ); ?>>
-		<title>Главная</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
@@ -19,7 +18,7 @@
 			var $ = jQuery.noConflict();
 		</script>
 		<div class="page">
-			<?php if ( is_page_template('home-template.php') ) : ?>
+			<?php if ( is_front_page() ) : ?>
 				<header class="header">
 					<div class="wrapper">
 						<div class="menu menu--left js-menu">
@@ -71,5 +70,6 @@
 					</div>
 				</header>
 				<div class="content">
+					<div class="header-placeholder"></div>
 			<?php endif; ?>
 			
